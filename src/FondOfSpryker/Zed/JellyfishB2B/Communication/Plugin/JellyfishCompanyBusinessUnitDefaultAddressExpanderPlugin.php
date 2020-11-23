@@ -55,8 +55,9 @@ class JellyfishCompanyBusinessUnitDefaultAddressExpanderPlugin extends AbstractP
                 $companyBusinessUnitTransfer,
                 $jellyfishCompanyUnitAddressTransfer
             ) === false ) {
-                    $jellyfishCompanyUnitAddressTransfer->setIsDefault(false);
-                    continue;
+                $jellyfishCompanyUnitAddressTransfer->setIsDefault(false);
+
+                continue;
             }
 
             $jellyfishCompanyUnitAddressTransfer->setIsDefault(true);
@@ -75,7 +76,6 @@ class JellyfishCompanyBusinessUnitDefaultAddressExpanderPlugin extends AbstractP
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer,
         JellyfishCompanyUnitAddressTransfer $jellyfishCompanyUnitAddressTransfer
     ): bool {
-        return ($companyBusinessUnitTransfer->getDefaultShippingAddress()
-            === $jellyfishCompanyUnitAddressTransfer->getId());
+        return ($companyBusinessUnitTransfer->getDefaultShippingAddress() === $jellyfishCompanyUnitAddressTransfer->getId());
     }
 }
