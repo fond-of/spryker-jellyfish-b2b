@@ -234,7 +234,6 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
      */
     protected function createCompanyBusinessUnitDefaultAddressExpanderPlugin(): JellyfishCompanyBusinessUnitExpanderPluginInterface
     {
-
         return new JellyfishCompanyBusinessUnitDefaultAddressExpanderPlugin(
             $this->getCompanyBusinessUnitFacade()
         );

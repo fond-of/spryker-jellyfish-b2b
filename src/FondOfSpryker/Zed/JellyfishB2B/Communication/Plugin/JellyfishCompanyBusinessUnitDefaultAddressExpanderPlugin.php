@@ -37,7 +37,6 @@ class JellyfishCompanyBusinessUnitDefaultAddressExpanderPlugin extends AbstractP
     public function expand(
         JellyfishCompanyBusinessUnitTransfer $jellyfishCompanyBusinessUnitTransfer
     ): JellyfishCompanyBusinessUnitTransfer {
-
         if ($jellyfishCompanyBusinessUnitTransfer->getId() === null) {
             return $jellyfishCompanyBusinessUnitTransfer;
         }
