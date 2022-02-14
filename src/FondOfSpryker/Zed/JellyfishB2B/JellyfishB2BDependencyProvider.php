@@ -49,11 +49,6 @@ class JellyfishB2BDependencyProvider extends AbstractBundleDependencyProvider
     public const PLUGINS_EXPORT_VALIDATOR = 'PLUGINS_EXPORT_VALIDATOR';
 
     /**
-     * @var string
-     */
-    public const PLUGINS_COMPANY_USER_EXPORTER_COMPANY_USER_EXPANDER = 'PLUGINS_COMPANY_USER_EXPORTER_COMPANY_USER_EXPANDER';
-
-    /**
      * @param \Spryker\Zed\Kernel\Container $container
      *
      * @return \Spryker\Zed\Kernel\Container
@@ -66,9 +61,7 @@ class JellyfishB2BDependencyProvider extends AbstractBundleDependencyProvider
         $container = $this->addCompanyUnitAddressFacade($container);
         $container = $this->addCompanyUserReferenceFacade($container);
         $container = $this->addLocaleFacade($container);
-        $container = $this->addExportValidatorPlugins($container);
-
-        return $this->addCompanyUserExporterCompanyUserExpanderPlugins($container);
+        return $this->addExportValidatorPlugins($container);
     }
 
     /**
@@ -182,31 +175,9 @@ class JellyfishB2BDependencyProvider extends AbstractBundleDependencyProvider
     }
 
     /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
-    protected function addCompanyUserExporterCompanyUserExpanderPlugins(Container $container): Container
-    {
-        $container[static::PLUGINS_COMPANY_USER_EXPORTER_COMPANY_USER_EXPANDER] = function (Container $container) {
-            return $this->getCompanyUserExporterCompanyUserExpanderPlugins();
-        };
-
-        return $container;
-    }
-
-    /**
      * @return array<\FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\EventEntityTransferExportValidatorPluginInterface>
      */
     protected function getExportValidatorPlugins(): array
-    {
-        return [];
-    }
-
-    /**
-     * @return array<\FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\CompanyUserExpanderPluginInterface>
-     */
-    protected function getCompanyUserExporterCompanyUserExpanderPlugins(): array
     {
         return [];
     }

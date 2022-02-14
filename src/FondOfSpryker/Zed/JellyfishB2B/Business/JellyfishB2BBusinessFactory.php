@@ -292,12 +292,4 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
     {
         return $this->getProvidedDependency(JellyfishB2BDependencyProvider::PLUGINS_EXPORT_VALIDATOR);
     }
-
-    /**
-     * @return array<\FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\CompanyUserExpanderPluginInterface>
-     */
-    protected function getCompanyUserExporterCompanyUserExpanderPlugins(): array
-    {
-        return $this->getProvidedDependency(JellyfishB2BDependencyProvider::PLUGINS_COMPANY_USER_EXPORTER_COMPANY_USER_EXPANDER);
-    }
 }
