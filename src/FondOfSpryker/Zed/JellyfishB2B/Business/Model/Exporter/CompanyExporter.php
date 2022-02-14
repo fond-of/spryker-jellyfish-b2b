@@ -8,6 +8,7 @@ use FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyFacade
 use Generated\Shared\Transfer\CompanyTransfer;
 use Generated\Shared\Transfer\EventEntityTransfer;
 use Generated\Shared\Transfer\JellyfishCompanyBusinessUnitTransfer;
+use Orm\Zed\Company\Persistence\Map\SpyCompanyTableMap;
 use Spryker\Shared\Kernel\Transfer\TransferInterface;
 use Spryker\Shared\Log\LoggerTrait;
 
@@ -116,6 +117,7 @@ class CompanyExporter implements ExporterInterface
     {
         return $transfer instanceof EventEntityTransfer &&
             count($transfer->getModifiedColumns()) > 0 &&
+            in_array(SpyCompanyTableMap::COL_FULLY_IMPORTED_AT, $transfer->getModifiedColumns(), true) &&
             $transfer->getName() === 'spy_company' &&
             $this->validateExport($transfer);
     }

@@ -7,11 +7,16 @@
         <property name="transferData" type="array"/>
     </transfer>
 
+    <transfer name="Company">
+        <property name="fullyImportedAt" type="string"/>
+    </transfer>
+
     <transfer name="CompanyUnitAddress">
         <property name="isDeleted" type="bool"/>
         <property name="isDefault" type="bool"/>
         <property name="fax" type="string"/>
         <property name="gln" type="string"/>
+        <property name="importedAt" type="string"/>
     </transfer>
 
     <transfer name="Customer">

@@ -8,6 +8,7 @@ use FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyUnitAd
 use Generated\Shared\Transfer\CompanyUnitAddressTransfer;
 use Generated\Shared\Transfer\EventEntityTransfer;
 use Generated\Shared\Transfer\JellyfishCompanyBusinessUnitTransfer;
+use Orm\Zed\CompanyUnitAddress\Persistence\Map\SpyCompanyUnitAddressTableMap;
 use Spryker\Shared\Kernel\Transfer\TransferInterface;
 use Spryker\Shared\Log\LoggerTrait;
 
@@ -89,6 +90,7 @@ class CompanyUnitAddressExporter implements ExporterInterface
     {
         return ($transfer instanceof EventEntityTransfer &&
             count($transfer->getModifiedColumns()) > 0 &&
+            !in_array(SpyCompanyUnitAddressTableMap::COL_IMPORTED_AT, $transfer->getModifiedColumns(), true) &&
             $transfer->getName() === self::EVENT_ENTITY_TRANSFER_NAME &&
             $this->validateExport($transfer)) ||
             ($transfer instanceof CompanyUnitAddressTransfer &&

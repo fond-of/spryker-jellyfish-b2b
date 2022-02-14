@@ -32,11 +32,6 @@ class JellyfishB2BEventSubscriber extends AbstractPlugin implements EventSubscri
         );
 
         $eventCollection->addListenerQueued(
-            JellyfishB2BEvents::ENTITY_SPY_COMPANY_BUSINESS_UNIT_UPDATE,
-            new CompanyBusinessUnitExportListener()
-        );
-
-        $eventCollection->addListenerQueued(
             JellyfishB2BEvents::COMPANY_UNIT_ADDRESS_AFTER_DELETE,
             new CompanyUnitAddressExportListener()
         );
@@ -50,7 +45,7 @@ class JellyfishB2BEventSubscriber extends AbstractPlugin implements EventSubscri
             JellyfishB2BEvents::ENTITY_SPY_COMPANY_UNIT_ADDRESS_UPDATE,
             new CompanyUnitAddressExportListener()
         );
-        
+
         return $eventCollection;
     }
 }
