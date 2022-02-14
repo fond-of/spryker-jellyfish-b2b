@@ -61,6 +61,7 @@ class JellyfishB2BDependencyProvider extends AbstractBundleDependencyProvider
         $container = $this->addCompanyUnitAddressFacade($container);
         $container = $this->addCompanyUserReferenceFacade($container);
         $container = $this->addLocaleFacade($container);
+
         return $this->addExportValidatorPlugins($container);
     }
 
