@@ -29,4 +29,4 @@ jobs:
       - name: Run test suite
         env:
           XDEBUG_MODE: coverage
-        run: composer run-script test
+        run: composer run-script ci

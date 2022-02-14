@@ -9,7 +9,8 @@
     }
   ],
   "scripts": {
-    "test": "make codeception",
+    "ci": "make ci",
+    "codeception": "make codeception",
     "phpcs": "make phpcs",
     "phpstan": "make phpstan"
   },
