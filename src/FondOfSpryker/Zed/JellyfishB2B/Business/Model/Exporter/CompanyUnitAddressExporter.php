@@ -16,6 +16,9 @@ class CompanyUnitAddressExporter implements ExporterInterface
 {
     use LoggerTrait;
 
+    /**
+     * @var string
+     */
     public const EVENT_ENTITY_TRANSFER_NAME = 'spy_company_unit_address';
 
     /**
@@ -24,7 +27,7 @@ class CompanyUnitAddressExporter implements ExporterInterface
     protected $companyUnitAddressFacade;
 
     /**
-     * @var \FondOfSpryker\Zed\JellyfishB2B\Dependency\Plugin\JellyfishCompanyBusinessUnitExpanderPluginInterface[]
+     * @var array<\FondOfSpryker\Zed\JellyfishB2B\Dependency\Plugin\JellyfishCompanyBusinessUnitExpanderPluginInterface>
      */
     protected $jellyfishCompanyBusinessUnitExpanderPlugins;
 
@@ -39,16 +42,16 @@ class CompanyUnitAddressExporter implements ExporterInterface
     protected $adapter;
 
     /**
-     * @var \FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\EventEntityTransferExportValidatorPluginInterface[]
+     * @var array<\FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\EventEntityTransferExportValidatorPluginInterface>
      */
     protected $validatorPlugins;
 
     /**
      * @param \FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade
      * @param \FondOfSpryker\Zed\JellyfishB2B\Business\Model\Mapper\JellyfishCompanyBusinessUnitMapperInterface $jellyfishCompanyBusinessUnitMapper
-     * @param \FondOfSpryker\Zed\JellyfishB2B\Dependency\Plugin\JellyfishCompanyBusinessUnitExpanderPluginInterface[] $jellyfishCompanyBusinessUnitExpanderPlugins
+     * @param array<\FondOfSpryker\Zed\JellyfishB2B\Dependency\Plugin\JellyfishCompanyBusinessUnitExpanderPluginInterface> $jellyfishCompanyBusinessUnitExpanderPlugins
      * @param \FondOfSpryker\Zed\Jellyfish\Business\Api\Adapter\AdapterInterface $adapter
-     * @param \FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\EventEntityTransferExportValidatorPluginInterface[] $validatorPlugins
+     * @param array<\FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\EventEntityTransferExportValidatorPluginInterface> $validatorPlugins
      */
     public function __construct(
         JellyfishB2BToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade,
@@ -65,7 +68,7 @@ class CompanyUnitAddressExporter implements ExporterInterface
     }
 
     /**
-     * @param \Spryker\Shared\Kernel\Transfer\TransferInterface[] $transfers
+     * @param array<\Spryker\Shared\Kernel\Transfer\TransferInterface> $transfers
      *
      * @return void
      */
@@ -95,7 +98,7 @@ class CompanyUnitAddressExporter implements ExporterInterface
             $this->validateExport($transfer)) ||
             ($transfer instanceof CompanyUnitAddressTransfer &&
                 $this->validateExport(
-                    $this->mapCompanyUnitAddressTransferToEventEntityTransfer($transfer)
+                    $this->mapCompanyUnitAddressTransferToEventEntityTransfer($transfer),
                 )
             );
     }
@@ -181,7 +184,7 @@ class CompanyUnitAddressExporter implements ExporterInterface
                 [
                     sprintf('%s.fk_company', self::EVENT_ENTITY_TRANSFER_NAME) =>
                         $companyUnitAddressTransfer->getFkCompany(),
-                ]
+                ],
             );
 
         return $eventEntityTransfer;

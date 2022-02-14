@@ -70,7 +70,7 @@ class JellyfishB2BFacade extends AbstractFacade implements JellyfishB2BFacadeInt
     }
 
     /**
-     * @param \Spryker\Shared\Kernel\Transfer\TransferInterface[] $transfers
+     * @param array<\Spryker\Shared\Kernel\Transfer\TransferInterface> $transfers
      *
      * @return void
      */
@@ -80,7 +80,7 @@ class JellyfishB2BFacade extends AbstractFacade implements JellyfishB2BFacadeInt
     }
 
     /**
-     * @param \Spryker\Shared\Kernel\Transfer\TransferInterface[] $transfers
+     * @param array<\Spryker\Shared\Kernel\Transfer\TransferInterface> $transfers
      *
      * @return void
      */

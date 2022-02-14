@@ -77,7 +77,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
     public function createOrderVatIdJellyfishOrderExpander(): OrderVatIdJellyfishOrderExpanderInterface
     {
         return new OrderVatIdJellyfishOrderExpander(
-            $this->getCompanyUnitAddressFacade()
+            $this->getCompanyUnitAddressFacade(),
         );
     }
 
@@ -91,7 +91,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
             $this->createCompanyBusinessUnitMapper(),
             $this->createCompanyExporterExpanderPlugins(),
             $this->createCompanyBusinessUnitAdapter(),
-            $this->getExportValidatorPlugins()
+            $this->getExportValidatorPlugins(),
         );
     }
 
@@ -105,7 +105,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
             $this->createCompanyBusinessUnitMapper(),
             $this->createCompanyExporterExpanderPlugins(),
             $this->createCompanyBusinessUnitAdapter(),
-            $this->getExportValidatorPlugins()
+            $this->getExportValidatorPlugins(),
         );
     }
 
@@ -117,7 +117,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
         return new JellyfishCompanyBusinessUnitMapper(
             $this->createCompanyMapper(),
             $this->createCompanyUnitAddressMapper(),
-            $this->createCompanyUnitAddressChecker()
+            $this->createCompanyUnitAddressChecker(),
         );
     }
 
@@ -159,7 +159,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
         return new JellyfishCompanyBusinessUnitDataExpanderPlugin(
             $this->getCompanyBusinessUnitFacade(),
             $this->getCompanyUnitAddressFacade(),
-            $this->createCompanyBusinessUnitMapper()
+            $this->createCompanyBusinessUnitMapper(),
         );
     }
 
@@ -171,7 +171,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
         return new JellyfishCompanyBusinessUnitBillingAddressExpanderPlugin(
             $this->getCompanyBusinessUnitFacade(),
             $this->getCompanyUnitAddressFacade(),
-            $this->createCompanyUnitAddressMapper()
+            $this->createCompanyUnitAddressMapper(),
         );
     }
 
@@ -183,7 +183,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
         return new JellyfishCompanyBusinessUnitAddressExpanderPlugin(
             $this->getCompanyUnitAddressFacade(),
             $this->createCompanyUnitAddressMapper(),
-            $this->createCompanyUnitAddressChecker()
+            $this->createCompanyUnitAddressChecker(),
         );
     }
 
@@ -193,7 +193,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
     protected function createCompanyBusinessUnitDefaultAddressExpanderPlugin(): JellyfishCompanyBusinessUnitExpanderPluginInterface
     {
         return new JellyfishCompanyBusinessUnitDefaultAddressExpanderPlugin(
-            $this->getCompanyBusinessUnitFacade()
+            $this->getCompanyBusinessUnitFacade(),
         );
     }
 
@@ -212,7 +212,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
     {
         return new JellyfishCompanyBusinessUnitCompanyExpanderPlugin(
             $this->getCompanyBusinessUnitFacade(),
-            $this->createCompanyMapper()
+            $this->createCompanyMapper(),
         );
     }
 
@@ -224,7 +224,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
         return new CompanyBusinessUnitAdapter(
             $this->getUtilEncodingService(),
             $this->createHttpClient(),
-            $this->getConfig()
+            $this->getConfig(),
         );
     }
 
@@ -297,8 +297,6 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
 
     /**
      * @return \FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToLocaleFacadeInterface
-     *
-     * @throws \Spryker\Zed\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     protected function getLocaleFacade(): JellyfishB2BToLocaleFacadeInterface
     {
@@ -306,7 +304,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\EventEntityTransferExportValidatorPluginInterface[]
+     * @return array<\FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\EventEntityTransferExportValidatorPluginInterface>
      */
     protected function getExportValidatorPlugins(): array
     {
@@ -314,7 +312,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\CompanyUserExpanderPluginInterface[]
+     * @return array<\FondOfSpryker\Zed\JellyfishB2BExtension\Dependency\Plugin\CompanyUserExpanderPluginInterface>
      */
     protected function getCompanyUserExporterCompanyUserExpanderPlugins(): array
     {
