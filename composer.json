@@ -21,6 +21,8 @@
     "fond-of-spryker/jellyfish-extension": "dev-master",
     "fond-of-spryker/jellyfish-b2b-extension": "dev-master",
     "fond-of-spryker/company-user-reference": "dev-master",
+    "fond-of-spryker/company-user-sales-connector": "dev-master",
+    "spryker/cart-note": "^1.0.0",
     "spryker/company": "^1.0.0",
     "spryker/company-business-unit": "^1.0.0 || ^2.0.0",
     "spryker/company-unit-address": "^1.0.0",
