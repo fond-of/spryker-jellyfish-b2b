@@ -27,4 +27,4 @@ codeception:
 	./vendor/bin/codecept run --env standalone --coverage --coverage-xml --coverage-html
 
 .PHONY: ci
-ci: install-dev phpcs phpstan codeception
+ci: install-dev phpcs codeception phpstan
