@@ -32,9 +32,7 @@ use FondOfSpryker\Zed\JellyfishB2B\Communication\Plugin\JellyfishCompanyBusiness
 use FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyBusinessUnitFacadeInterface;
 use FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyFacadeInterface;
 use FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyUnitAddressFacadeInterface;
-use FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyUserFacadeInterface;
 use FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyUserReferenceFacadeInterface;
-use FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCustomerFacadeInterface;
 use FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToLocaleFacadeInterface;
 use FondOfSpryker\Zed\JellyfishB2B\Dependency\Plugin\JellyfishCompanyBusinessUnitExpanderPluginInterface;
 use FondOfSpryker\Zed\JellyfishB2B\JellyfishB2BDependencyProvider;
@@ -269,22 +267,6 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
     protected function getCompanyUnitAddressFacade(): JellyfishB2BToCompanyUnitAddressFacadeInterface
     {
         return $this->getProvidedDependency(JellyfishB2BDependencyProvider::FACADE_COMPANY_UNIT_ADDRESS);
-    }
-
-    /**
-     * @return \FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCustomerFacadeInterface
-     */
-    protected function getCustomerFacade(): JellyfishB2BToCustomerFacadeInterface
-    {
-        return $this->getProvidedDependency(JellyfishB2BDependencyProvider::FACADE_CUSTOMER);
-    }
-
-    /**
-     * @return \FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyUserFacadeInterface
-     */
-    protected function getCompanyUserFacade(): JellyfishB2BToCompanyUserFacadeInterface
-    {
-        return $this->getProvidedDependency(JellyfishB2BDependencyProvider::FACADE_COMPANY_USER);
     }
 
     /**
