@@ -22,7 +22,7 @@ class CompanyUnitAddressExporter implements ExporterInterface
     public const EVENT_ENTITY_TRANSFER_NAME = 'spy_company_unit_address';
 
     /**
-     * @var \FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade
+     * @var \FondOfSpryker\Zed\JellyfishB2B\Dependency\Facade\JellyfishB2BToCompanyUnitAddressFacadeInterface
      */
     protected $companyUnitAddressFacade;
 
@@ -79,7 +79,6 @@ class CompanyUnitAddressExporter implements ExporterInterface
                 continue;
             }
 
-            /** @var \Generated\Shared\Transfer\EventEntityTransfer $transfer */
             $this->export($transfer);
         }
     }
