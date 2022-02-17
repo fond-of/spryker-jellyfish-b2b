@@ -59,7 +59,10 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
      */
     public function createJellyfishOrderExpander(): JellyfishOrderExpanderInterface
     {
-        return new JellyfishOrderExpander($this->getCompanyUserReferenceFacade());
+        return new JellyfishOrderExpander(
+            $this->getCompanyUserReferenceFacade(),
+            $this->getLocaleFacade()
+        );
     }
 
     /**
