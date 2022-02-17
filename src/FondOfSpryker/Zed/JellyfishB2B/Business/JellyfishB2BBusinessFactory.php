@@ -52,7 +52,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
     {
         return new JellyfishOrderExpander(
             $this->getCompanyUserReferenceFacade(),
-            $this->getLocaleFacade()
+            $this->getLocaleFacade(),
         );
     }
 

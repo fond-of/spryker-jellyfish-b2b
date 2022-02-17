@@ -27,8 +27,7 @@ class JellyfishOrderExpander implements JellyfishOrderExpanderInterface
     public function __construct(
         JellyfishB2BToCompanyUserReferenceFacadeInterface $companyUserReferenceFacade,
         JellyfishB2BToLocaleFacadeInterface $localeFacade
-    )
-    {
+    ) {
         $this->companyUserReferenceFacade = $companyUserReferenceFacade;
         $this->localeFacade = $localeFacade;
     }
@@ -58,12 +57,12 @@ class JellyfishOrderExpander implements JellyfishOrderExpanderInterface
         $jellyfishOrderTransfer = $this->expandWithCompanyFields($jellyfishOrderTransfer, $companyUserTransfer);
         $jellyfishOrderTransfer = $this->expandWithCompanyBusinessUnitFields(
             $jellyfishOrderTransfer,
-            $companyUserTransfer
+            $companyUserTransfer,
         );
 
         $jellyfishOrderTransfer = $this->expandWithCompanyLocale(
             $jellyfishOrderTransfer,
-            $companyUserTransfer
+            $companyUserTransfer,
         );
 
         return $jellyfishOrderTransfer;
@@ -149,8 +148,7 @@ class JellyfishOrderExpander implements JellyfishOrderExpanderInterface
             return $jellyfishOrderTransfer;
         }
 
-        return $jellyfishOrderTransfer->setCompanyLocale(
-            $this->localeFacade->getLocaleById($companyTransfer->getFkLocale())
-        );
+        return $jellyfishOrderTransfer
+            ->setCompanyLocale($this->localeFacade->getLocaleById($companyTransfer->getFkLocale()));
     }
 }
