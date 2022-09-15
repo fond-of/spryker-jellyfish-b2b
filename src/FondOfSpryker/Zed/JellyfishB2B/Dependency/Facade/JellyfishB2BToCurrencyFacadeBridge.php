@@ -20,6 +20,11 @@ class JellyfishB2BToCurrencyFacadeBridge implements JellyfishB2BToCurrencyFacade
         $this->currencyFacade = $currencyFacade;
     }
 
+    /**
+     * @param int $idCurrency
+     *
+     * @return \Generated\Shared\Transfer\CurrencyTransfer
+     */
     public function getByIdCurrency(int $idCurrency): CurrencyTransfer
     {
         return $this->currencyFacade->getByIdCurrency($idCurrency);

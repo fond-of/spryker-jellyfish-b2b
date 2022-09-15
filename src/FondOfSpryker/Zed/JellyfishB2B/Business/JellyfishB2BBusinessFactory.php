@@ -87,7 +87,7 @@ class JellyfishB2BBusinessFactory extends AbstractBusinessFactory
     {
         return new JellyfishCompanyMapper(
             $this->getLocaleFacade(),
-            $this->getCurrencyFacade()
+            $this->getCurrencyFacade(),
         );
     }
 
